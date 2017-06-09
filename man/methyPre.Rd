@@ -1,7 +1,7 @@
 \name{methyPre}
 \alias{methyPre}
 \title{
-Wrapper function for execution of comprehensive
+Wrapper function for assembling comprehensive upstream pipelines for methylation array data.
 }
 \description{
 This function is for conveniently specifying a pipeline to preprocess methylation array data using common parameters from the minfi package and from common manipulations of experiment summary objects. It is recommended this be used to supplement, but not replace, effective analysis workflows, ie. to compare the efficacies of different normalization methods. Methylation experiment objects that have already been preprocessed can still be conveniently run through this workflow, ie. to map probes to the genome, convert to a new experiment object class, or conveniently filter on recognized lists of cross-reactive probes.
