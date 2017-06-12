@@ -8,11 +8,11 @@ methyPre <- function(meExpObj, workflow=c("norm","pfilt","map","minfifilt","ufil
   return.list <- list()
 
   if(length(workflow[grepl("norm",workflow)])>0){
-    if(length(normfun[grepl("illumina",normfun)])>0){
+    if(length(normfun[grepl("illumina|Illumina",normfun)])>0){
       message("starting Illumina normalization..")
       preObj1 <- preprocessIllumina(meExpObj)
       message("finished Illumina normalization!")
-    } else if(length(normfun[grepl("noob",normfun)])>0){
+    } else if(length(normfun[grepl("noob|Noob|NOOB",normfun)])>0){
       message("starting Noob normalization..")
       preObj1 <- preprocessNoob(meExpObj)
       message("finished Noob normalization!")
@@ -24,11 +24,11 @@ methyPre <- function(meExpObj, workflow=c("norm","pfilt","map","minfifilt","ufil
       return.list <- append(return.list,list(preObj1))
     }
 
-    if(length(normfun[grepl("swan",normfun)])>0){
+    if(length(normfun[grepl("swan|Swan|SWAN",normfun)])>0){
       message("beginning SWAN normalization..")
       preObj2 <- preprocessSWAN(meExpObj,mSet=preObj1)
       message("finished SWAN normalization!")
-    } else if(length(normfun[grepl("funnorm",normfun)])>0){
+    } else if(length(normfun[grepl("funnorm|Funnorm|FUNNORM",normfun)])>0){
       message("beginning Functional Normalization..")
       preObj2 <- preprocessFunnorm(meExpObj,bgCorr=FALSE)
       message("finished Functional Normalization!")
