@@ -11,3 +11,7 @@ This package contains a single wrapper function that serves as an all-in-one wor
 
 ## Citations
 For more info, see [the minfi Bioconductor page](http://bioconductor.org/packages/release/bioc/html/minfi.html).  For information on cross-reactive and poor quality probes, see [Chen et al 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3592906/) (HM450 platform), and [Pidsley et al 2016](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-1066-1) (EPIC platform).
+
+## NEWS/TODO
+### 1/20/18 
+Improvements planned: consider contingencies or exceptions and add more messages. Consider adding an estimate for object size and enabling a user interaction (whether to accept or decline based on available memory, the list objects get huge pretty quickly). 
