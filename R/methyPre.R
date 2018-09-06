@@ -46,8 +46,9 @@ methyPre <- function(meExpObj, workflow=c("norm","pfilt","map","minfifilt","ufil
     message("getting intensity p-values from RG set...")
     detP <- detectionP(meExpObj)
     message(paste0("filtering on mean detection cutoff =",detPcutoff))
-    failed <-rowMeans(detP) > detPcutoff
-    preObj3 <- preObj2[!failed,]
+    failed.conditional <- rowMeans(detP) > detPcutoff
+    passed.cgid <-rownames(detP[!failed.conditional,])
+    preObj3 <- preObj2[rownames(preObj2) %in% passed.cgid,]
   } else{
     preObj3 <- preObj2
   }
